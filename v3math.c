@@ -9,46 +9,21 @@ void v3_add(float *dst, float *a, float *b)
 	
 }
 
-void tes_v3_add()
-{
-	float r[] = {0.0, 0.0, 0.0};
-	float w[] = {1.0, 0.0, 0.0};
-	float v[] = {1.0, 0.0, 0.0};
-	
-	v3_add(r, w, v);
-	// compare output for what's expected
-	
-}
-
 void v3_from_points(float *dst, float *a, float *b){
-	
 	
 } // form v3 from a to b
 void v3_subtract(float *dst, float *a, float *b){
 	
-	dst[0] = a(0) - b(0);
+	dst[0] = a[0] - b[0];
 	dst[1] = a[1] - b[1];
 	dst[2] = a[2] - b[2];
 	
 }
 
-void tes_v3_sub()
-{
-	float v[] = {1.0, 0.0, 0.0};
-	float w[] = {1.0, 0.0, 0.0};
-	float r[] = {0.0, 0.0, 0.0};
-	
-	v3_subtract(r, w, v);
-	// compare output for what's expected
-	
-}
-
-
 float v3_dot_product(float *a, float *b){
 	
-	// a_vector * b_vector = [ax ]
-	
-	
+	// a_vector * b_vector = [ax ay az] * [bx by bz] = ax*bx + ay*by + az*bz
+	return (a[0] * b[0]) + (a[1] * b[1]) + (a[2] * b[2]);
 }
 void v3_cross_product(float *dst, float *a, float *b){
 	
