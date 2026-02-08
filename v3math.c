@@ -30,17 +30,22 @@ void v3_cross_product(float *dst, float *a, float *b){
 	
 }
 void v3_scale(float *dst, float s){
-	
+
+    dst[0] *= s;
+    dst[1] *= s;
+    dst[2] *= s;
 	
 }
+// angle between a and b
 float v3_angle(float *a, float *b){
 	
 	
-} // angle between a and b
+} 
+// angle between a and b; no cos-1
 float v3_angle_quick(float *a, float *b){
 	
 	
-} // angle between a and b; no cos-1
+} 
 void v3_reflect(float *dst, float *v, float *n){
 	
 	
