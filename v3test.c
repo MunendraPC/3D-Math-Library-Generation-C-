@@ -19,3 +19,12 @@ void tes_v3_sub()
 	// compare output for what's expected
 	
 }
+
+void tes_v3_dotProd()
+{
+    float v[] = {1.0, 0.0, 0.0};
+    float w[] = {1.0, 0.0, 0.0};
+    float result = v3_dot_product(v, w);
+    // compare result for what's expected
+
+}
