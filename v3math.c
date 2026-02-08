@@ -5,13 +5,17 @@ void v3_add(float *dst, float *a, float *b)
 	dst[0] = a[0] + b[0];
 	dst[1] = a[1] + b[1];
 	dst[2] = a[2] + b[2];
-	
-	
 }
 
+// form v3 from a to b
 void v3_from_points(float *dst, float *a, float *b){
+
+    dst[0] = (b[0] - a[0]);
+    dst[1] = (b[1] - a[1]);
+    dst[2] = (b[2] - a[2]);
+
 	
-} // form v3 from a to b
+}
 void v3_subtract(float *dst, float *a, float *b){
 	
 	dst[0] = a[0] - b[0];
@@ -39,14 +43,15 @@ void v3_scale(float *dst, float s){
 }
 // angle between a and b
 float v3_angle(float *a, float *b){
-	
+	return acos(v3_dot_product(a, b)/ (sqrt((a[0]*a[0]) + a[1]*a[1] + a[2]*a[2]) * sqrt(b[0]*b[0] + b[1]*b[1] + b[2]*b[2])));
 	
 } 
 // angle between a and b; no cos-1
 float v3_angle_quick(float *a, float *b){
+	return v3_dot_product(a, b)/ (sqrt((a[0]*a[0]) + a[1]*a[1] + a[2]*a[2]) * sqrt(b[0]*b[0] + b[1]*b[1] + b[2]*b[2]));
 	
-	
-} 
+}
+// reflect v across n
 void v3_reflect(float *dst, float *v, float *n){
 	float dot = v3_dot_product(v, n);
 	float scaled_n[3] = {n[0] * 2 * dot, n[1] * 2 * dot, n[2] * 2 * dot};
@@ -54,12 +59,14 @@ void v3_reflect(float *dst, float *v, float *n){
 	dst[1] = v[1] - scaled_n[1];
 	dst[2] = v[2] - scaled_n[2];
 }
+// length of a
 float v3_length(float *a){
 	return sqrt(a[0]*a[0] + a[1]*a[1] + a[2]*a[2]);
 	
 }
+// normalizing the a variable
 void v3_normalize(float *dst, float *a){
-	float length = ve_length(a);
+	float length = v3_length(a);
 	if(length > 0) {
 		dst[0] = a[0] / length;
 		dst[1] = a[1] / length;
