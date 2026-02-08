@@ -30,7 +30,10 @@ void v3_cross_product(float *dst, float *a, float *b){
 	
 }
 void v3_scale(float *dst, float s){
-	
+
+    dst[0] *= s;
+    dst[1] *= s;
+    dst[2] *= s;
 	
 }
 float v3_angle(float *a, float *b){
