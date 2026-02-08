@@ -1,3 +1,18 @@
+#include "v3math.h"
+
+void tes_v3_from_points()
+{
+    float a[] = {1.0, 2.0, 3.0};
+    float b[] = {4.0, 5.0, 6.0};
+    float dst[] = {0.0, 0.0, 0.0};
+
+    v3_from_points(dst, a, b);
+    // compare output for what's expected
+
+    printf("v3_from_points result: (%f, %f, %f)\n", dst[0], dst[1], dst[2]);
+    
+}
+
 void tes_v3_add()
 {
 	float r[] = {0.0, 0.0, 0.0};
@@ -45,5 +60,25 @@ void tes_v3_scale()
     // compare output for what's expected
     printf("v3_scale output: (%f, %f, %f)\n", v[0], v[1], v[2]);
 
+
+}
+
+void tes_v3_angle()
+{
+    float v[] = {1.0, 0.0, 0.0};
+    float w[] = {2.0, 0.0, 0.0};
+    float result = v3_angle(v, w);
+
+    printf("v3_angle result: (%f)\n", result);
+
+}
+
+void tes_v3_angle_nocos()
+{
+    float v[] = {1.0, 0.0, 0.0};
+    float w[] = {2.0, 0.0, 0.0};
+    float result = v3_angle_quick(v, w);
+
+    printf("v3_angle result: (%f)\n", result);
 
 }
