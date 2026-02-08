@@ -1,4 +1,3 @@
-
 #ifndef V3MATH_H
 #define V3MATH_H
 
@@ -7,6 +6,7 @@
 #include <string>
 #include <fstream>
 #include <stdbool.h>
+#include <math.h>
 
 void  v3_from_points(float *dst, float *a, float *b);  
 void  v3_add(float *dst, float *a, float *b);
@@ -22,3 +22,5 @@ void  v3_normalize(float *dst, float *a);
 
 
 bool  v3_equals(float *a, float *b, float tolerance);
+
+#endif
