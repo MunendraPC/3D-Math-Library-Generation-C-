@@ -47,3 +47,47 @@ void tes_v3_scale()
 
 
 }
+
+void tes_v3_length()
+{
+    float v[] = {3.0, 4.0, 0.0};
+    float length = v3_length(v);
+
+    // compare result for what's expected
+    printf("v3_length result: (%f)\n", length);
+}
+
+void tes_v3_reflect()
+{
+    float v[] = {1.0, -1.0, 0.0};
+    float n[] = {0.0, 1.0, 0.0};
+    float r[3] = {0.0, 0.0, 0.0};
+
+    v3_reflect(r, v, n);
+
+    // compare output for what's expected
+    printf("v3_reflect output: (%f, %f, %f)\n", r[0], r[1], r[2]);
+}
+
+void tes_v3_normalize()
+{
+    float v[] = {3.0, 4.0, 0.0};
+    float normalized[3] = {0.0, 0.0, 0.0};
+
+    v3_normalize(normalized, v);
+
+    // compare output for what's expected
+    printf("v3_normalize output: (%f, %f, %f)\n", normalized[0], normalized[1], normalized[2]);
+}
+
+void tes_v3_crossProd()
+{
+    float v[] = {1.0, 0.0, 0.0};
+    float w[] = {0.0, 1.0, 0.0};
+    float result[3] = {0.0, 0.0, 0.0};
+
+    v3_cross_product(result, v, w);
+
+    // compare output for what's expected
+    printf("v3_cross_product output: (%f, %f, %f)\n", result[0], result[1], result[2]);
+}
