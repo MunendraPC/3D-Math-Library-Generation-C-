@@ -21,4 +21,3 @@ void  v3_normalize(float *dst, float *a);
 
 
 bool  v3_equals(float *a, float *b, float tolerance);
-
