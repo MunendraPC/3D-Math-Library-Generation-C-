@@ -9,9 +9,15 @@ void v3_add(float *dst, float *a, float *b)
 	
 }
 
+// form v3 from a to b
 void v3_from_points(float *dst, float *a, float *b){
+
+    dst[0] = (b[0] - a[0]);
+    dst[1] = (b[1] - a[1]);
+    dst[2] = (b[2] - a[2]);
+
 	
-} // form v3 from a to b
+}
 void v3_subtract(float *dst, float *a, float *b){
 	
 	dst[0] = a[0] - b[0];
