@@ -1,4 +1,4 @@
-
+#include "v3math.h"
 
 void v3_add(float *dst, float *a, float *b)
 {
@@ -38,12 +38,12 @@ void v3_scale(float *dst, float s){
 }
 // angle between a and b
 float v3_angle(float *a, float *b){
-	
+	return acos(v3_dot_product(a, b)/ (sqrt((a[0]*a[0]) + a[1]*a[1] + a[2]*a[2]) * sqrt(b[0]*b[0] + b[1]*b[1] + b[2]*b[2])));
 	
 } 
 // angle between a and b; no cos-1
 float v3_angle_quick(float *a, float *b){
-	
+	return v3_dot_product(a, b)/ (sqrt((a[0]*a[0]) + a[1]*a[1] + a[2]*a[2]) * sqrt(b[0]*b[0] + b[1]*b[1] + b[2]*b[2]));
 	
 } 
 void v3_reflect(float *dst, float *v, float *n){

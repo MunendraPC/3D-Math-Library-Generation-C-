@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 #include <stdint.h>
-#include <string>
-#include <fstream>
 #include <stdbool.h>
 #include <math.h>
 
