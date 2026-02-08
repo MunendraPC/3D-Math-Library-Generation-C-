@@ -66,7 +66,7 @@ float v3_length(float *a){
 }
 // normalizing the a variable
 void v3_normalize(float *dst, float *a){
-	float length = ve_length(a);
+	float length = v3_length(a);
 	if(length > 0) {
 		dst[0] = a[0] / length;
 		dst[1] = a[1] / length;
