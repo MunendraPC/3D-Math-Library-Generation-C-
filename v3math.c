@@ -45,14 +45,13 @@ void v3_scale(float *dst, float s){
 float v3_angle(float *a, float *b){
 	return acos(v3_dot_product(a, b)/ (sqrt((a[0]*a[0]) + a[1]*a[1] + a[2]*a[2]) * sqrt(b[0]*b[0] + b[1]*b[1] + b[2]*b[2])));
 	
-	
 } 
 // angle between a and b; no cos-1
 float v3_angle_quick(float *a, float *b){
 	return v3_dot_product(a, b)/ (sqrt((a[0]*a[0]) + a[1]*a[1] + a[2]*a[2]) * sqrt(b[0]*b[0] + b[1]*b[1] + b[2]*b[2]));
 	
-	
-} 
+}
+// reflect v across n
 void v3_reflect(float *dst, float *v, float *n){
 	float dot = v3_dot_product(v, n);
 	float scaled_n[3] = {n[0] * 2 * dot, n[1] * 2 * dot, n[2] * 2 * dot};
