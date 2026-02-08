@@ -55,10 +55,14 @@ void v3_reflect(float *dst, float *v, float *n){
 	dst[2] = v[2] - scaled_n[2];
 }
 float v3_length(float *a){
-	
+	return sqrt(a[0]*a[0] + a[1]*a[1] + a[2]*a[2]);
 	
 }
 void v3_normalize(float *dst, float *a){
-	
-	
+	float length = ve_length(a);
+	if(length > 0) {
+		dst[0] = a[0] / length;
+		dst[1] = a[1] / length;
+		dst[2] = a[2] / length;
+	}
 }
